@@ -1,0 +1,29 @@
+/* Write your CSS here */
+.team-item-con {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: row;
+  align-items: center;
+  list-style: none;
+  border-color: #ffffff;
+  width: 500px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffffff33;
+}
+img {
+  width: 140px;
+  height: 110px;
+  padding-left: 20px;
+}
+p {
+  text-decoration: none;
+  color: white;
+  font-family: 'Bree Serif';
+  font-size: 25px;
+  text-align: center;
+  margin-left: 25px;
+}
