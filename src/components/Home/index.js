@@ -42,7 +42,13 @@ class Home extends Component {
         </div>
         {isLoading ? (
           <div>
-            <Loader type="Oval" color="#ffffff" height={50} width={50} />
+            <Loader
+              testid="loader"
+              type="Oval"
+              color="#ffffff"
+              height={50}
+              width={50}
+            />
           </div>
         ) : (
           <ul className="team-list-con">

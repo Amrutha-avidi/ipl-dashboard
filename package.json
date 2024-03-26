@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "engines": {
-    "node": "^10.13 || 12 || 14 || 15",
+    "node": "^10.13 || 12 || 14 || 15 || 20",
     "npm": ">=6"
   },
   "dependencies": {
@@ -16,7 +16,8 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-loader-spinner": "4.0.0",
-    "react-router-dom": "5.2.0"
+    "react-router-dom": "5.2.0",
+    "recharts": "2.12.3"
   },
   "devDependencies": {
     "eslint-config-airbnb": "18.2.1",

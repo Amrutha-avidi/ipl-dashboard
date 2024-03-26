@@ -13,8 +13,8 @@
   padding: 10px;
 }
 .won {
-  color: red;
+  color: green;
 }
 .lost {
-  color: green;
+  color: red;
 }

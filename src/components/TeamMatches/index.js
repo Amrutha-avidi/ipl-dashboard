@@ -1,9 +1,12 @@
 // Write your code here
 import {Component} from 'react'
+// import {Redirect} from 'react-router-dom'
+
 import Loader from 'react-loader-spinner'
 
 import LatestMatch from '../LatestMatch'
 import MatchCard from '../MatchCard'
+import PieChart from '../PieChart'
 
 import './index.css'
 
@@ -75,22 +78,58 @@ class TeamMatches extends Component {
     }
   }
 
+  goBack = () => {
+    const {history} = this.props
+    history.push('/')
+  }
+
   render() {
     const {teamMatchData, isLoading} = this.state
     const {teamBannerUrl, latestMatchDetails, recentMatches} = teamMatchData
     return isLoading ? (
       <div>
-        <Loader type="Oval" color="#00BFFF" height={50} width={50} />
+        <Loader
+          testid="loader"
+          type="Oval"
+          color="#00BFFF"
+          height={50}
+          width={50}
+        />
       </div>
     ) : (
       <div className={`team-details-con ${this.getRouteClassName()}`}>
+        <button type="button" className="back-button" onClick={this.goBack}>
+          <svg
+            className="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="64"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 12h14M5 12l4-4m-4 4 4 4"
+            />
+          </svg>
+        </button>
         <img className="banner-image" src={teamBannerUrl} alt="team banner" />
         <LatestMatch latestMatchData={latestMatchDetails} />
         <ul className="card-con">
           {recentMatches.map(eachMatch => (
-            <MatchCard matchCardDetails={eachMatch} key={eachMatch.id} />
+            <div key={eachMatch.id}>
+              <MatchCard matchCardDetails={eachMatch} />
+            </div>
           ))}
         </ul>
+        <PieChart
+          recentMatches={recentMatches}
+          latestMatchDetails={latestMatchDetails}
+        />
       </div>
     )
   }
